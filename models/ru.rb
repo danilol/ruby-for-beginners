@@ -3,6 +3,6 @@ class Ru
   
   def self.query(sql, params = [])
     result = DbConnection.query(sql, params)
-    result.map { |row| row } 
+    result.map { |row| new(row) } 
   end
 end
