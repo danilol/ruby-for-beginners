@@ -26,3 +26,40 @@ It covers the basic building blocks of the language as well as core Object-Orien
    ```bash
    git clone https://github.com/yourusername/ruby-for-beginners.git
    cd ruby-for-beginners
+
+## 🏁 Running the App
+
+You can start the Ruby app from the terminal and interact with your classes. Make sure you have Ruby 3.1+, Bundler (`gem install bundler`), PostgreSQL running locally, and a `.env` file created from `.env.sample` with your database credentials.
+
+Install dependencies with:
+
+```bash
+bundle install
+```
+
+
+Create your environment file by copying the sample and updating it with your local PostgreSQL credentials:
+```bash
+cp .env.sample .env
+```
+
+Then edit the .env file to set your database connection parameters.
+
+Run the main entry point with:
+```bash
+ruby main.rb
+```
+
+This will load all Ruby files from lib/ and models/, execute any startup code in main.rb, and open an interactive IRB session with your classes already loaded.
+
+Once the IRB shell starts, you can query the database:
+
+```ruby
+# List all contestants
+Contestant.all
+
+# Get the first contestant
+Contestant.all.first
+```
+
+Make sure PostgreSQL is running and the credentials in .env are correct.
